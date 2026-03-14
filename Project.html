@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dacar's world</title>
+    <style>  
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: linear-gradient(to right, #4B3E2A, #7CFC00); /* rjava + zelena */
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-top: 80px; /* da se vsebina ne skriva za nav */
+            text-align: center;
+        }
+
+        h1 {
+            color: lawngreen;
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About me</a>
+        <a href="#">Research and projects</a>
+        <a href="#">Contact</a>
+    </nav>

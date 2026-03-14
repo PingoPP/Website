@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dacar's World</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:center;
+gap:40px;
+background:linear-gradient(to right,#4B3E2A,#7CFC00);
+padding:18px;
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* SECTIONS */
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:100px 20px;
+text-align:center;
+}
+
+h1{
+color:lawngreen;
+margin-bottom:20px;
+}
+
+p{
+max-width:800px;
+font-size:18px;
+line-height:1.6;
+}
+
+/* PROJECT CARDS */
+
+.projects{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:10px;
+width:250px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 15px lawngreen;
+}
+
+.card h3{
+color:lawngreen;
+}
+
+/* SOCIAL ICONS */
+
+.social{
+margin-top:20px;
+display:flex;
+gap:25px;
+}
+
+.social a{
+color:white;
+font-size:28px;
+transition:0.3s;
+}
+
+.social a:hover{
+color:lawngreen;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#111;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+
+<section id="home">
+
+
+<img> src="Stein.jpg"  class="Hillshade of Kamnik">
+
+<h1>Welcome to Jaka Dacar's world</h1>
+
+<p>
+Archaeology student interested in LiDAR analysis, prehistoric landscapes and
+advanced digital methods in archaeology.  
+This website presents my research journey, projects and academic interests.
+</p>
+
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h1>About Me</h1>
+
+<p>
+Hello, my name is Jaka Dacar. I am a student of Archaeology at the University of Ljubljana (I highly recommend studying in Ljubljana!). My main interest is combining technology with the past, and I found the perfect field for that – LiDAR analysis. My academic goal is to improve the methodology and understanding of archaeological landscapes in Slovenia.
+</p>
+
+</section>
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+<h1>Research & Projects</h1>
+
+<div class="projects">
+
+<div class="card">
+<h3>LiDAR Landscape Analysis</h3>
+<p>Using LiDAR data to identify archaeological features hidden beneath forest cover and improving methodology.</p>
+</div>
+
+<div class="card">
+<h3>Prehistoric Adriatic Studies</h3>
+<p>Research on prehistoric settlement patterns and landscape evolution.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h1>Contact</h1>
+
+<p>You can reach me through email or social media.</p>
+
+<div class="social">
+
+<a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=88407xp" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://github.com/PingoPP" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="mailto:jakadacar9@email.com">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Jaka Dacar | Archaeology & LiDAR Portfolio</p>
+
+</footer>
+
+</body>
+</html>

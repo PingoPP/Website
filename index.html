@@ -1,41 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Jaka Dacar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
-            background-color: rgb(0, 6, 15);
-            display: flex;
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", monospace;
+            display: flex; 
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Courier New';
+            min-height: 100vh; 
+        }
+
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: rgb(18, 18, 121);
+        }
+
+        .container > .background {
+            position: absolute;
+            border-radius: 3rem;
+            animation: gradient 4s infinite;
+        }
+
+        @keyframes gradient {
+            50% {
+                transform: scale(1.3) translate(100px);
+            }
+        }
+
+        .background:nth-child(1) {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(13, 3, 53);
+        }
+
+        .background:nth-child(2) {
+            height: 80%;
+            width: 70%;
+            background-color: rgb(8, 8, 72);
+            right: -20%;
+            top: 20%;
+        }
+
+        .background:nth-child(3) {
+            height: 50%;
+            width: 70%;
+            background-color: rgb(15, 15, 54);
+            left: -10%;
+            top: -10%;
+            animation-delay: 2s;
+        }
+
+        .background:nth-child(4) {
+            height: 80%;
+            width: 70%;
+            background-color: rgb(0, 0, 73);
+            right: -15%;
+            top: -20%;
+            animation-delay: 3s;
+        }
+
+        .background:nth-child(5) {
+            height: 70%;
+            width: 65%;
+            background-color: rgb(0, 4, 37);
+            right: 0%;
+            top: -50%;
+            animation-delay: 1s;
+        }
+
+        .container::after {
+            position: absolute;
+            content: "";
+            inset: 0;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1;
+        }
+
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
         }
 
         h1 {
             font-size: 50px;
             color: rgb(255, 208, 0);
-            text-shadow: 0 0 10px rgb(64, 58, 2), 0 0 20px rgb(147, 134, 17);
+            text-shadow:
+                0 0 10px rgb(113, 103, 6),
+                0 0 20px rgb(147, 134, 17);
+            margin-top: 0;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        
         }
+
         h2 {
             font-size: 35px;
             color: rgb(255, 230, 0);
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h3 {
+            color: rgb(253, 253, 253);
+            font-size: 20px;
+            display: none; 
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
         }
 
         p {
             color: white;
             font-size: 25px;
             margin: 4px;
-            font-family: "Courier New";
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            color: white;
+            font-size: 14px; 
+            margin: 10px;
+            text-align: left;  
+            justify-content: center;
+            align-items: center;
         }
 
         .icons {
             display: flex;
             gap: 30px;
             margin-top: 20px;
+            justify-content: center;
+            align-items: center;
         }
 
         .icons a {
@@ -49,68 +168,259 @@
             text-shadow: 0 0 20px rgb(255, 255, 255);
         }
 
-        p1 {
+        .projects {
+            margin-top: 50px;
+            width: 100%; 
+        }
+
+        .projects h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .projects ul {
+            color: white;
+            font-size: 14px;
+            text-align: left;
+            line-height: 2;
+            width: 900px;
+            margin: 0 auto;
+            padding-left: 20px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            z-index: 3;
+        }
+
+        footer span {
             color: white;
             font-size: 12px;
-            font-family: "Courier New";
         }
-        h3 {
-            color: rgb(253, 253, 253);
-            font-size: 20px;
-            font-family:"Courier New";
-        }
-        p2 {
-            color: rgb(255, 255, 255);
-            font-size: 15px;
-            font-family:"Courier New";
-        }
-        
 
-    </style>
-</head>
-<body>
-    <h1>Welcome to Jaka Dacar's website!</h1>
-    <p>I am an archaeologist student interested in LiDAR (and GIS) and</p>
-    <p>programming (Python).</p>
+        footer a {
+            position: static;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: justify;
+            padding: 20rem;
+            z-index: 5;
+        }
 
-    <div class="icons">
-        <a href="https://github.com/PingoPP">
-            <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/jaka-dacar/">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://discordapp.com/user/576005192731066368">
-            <i class="fa-brands fa-discord"></i>
-        </a>
+        .skills {
+            position: absolute;
+            bottom: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            z-index: 3;
+        }
+
+        .skill {
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 12px;
+            background-color: rgba(255, 254, 254, 0.139);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 10px;
+            background-color: rgb(255, 208, 0);
+        }
+
+        .python {
+            width: 57%;
+        }
+
+        .pdal {
+            width: 60%;
+        }
+
+        .lidar {
+            width: 70%;
+        }
+
+        .qgis {
+            width: 65%;
+        }
+        ::-webkit-scrollbar {
+            background: aliceblue;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: blue;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: orange;            
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+            </style>
+        </head>
+
+
+    <body>
+
+    <div class="container">
+
+        <div class="background"></div>
+        <div class="background"></div>
+        <div class="background"></div>
+        <div class="background"></div>
+        <div class="background"></div>
+
+        <main class="content">
+
+            <h1>Welcome to Jaka Dacar's website!</h1>
+
+            <p>
+                I am an archaeologist student interested in LiDAR and
+            </p>
+
+            <p>
+                programming (Python).
+            </p>
+
+            <div class="icons">
+
+                <a href="https://github.com/PingoPP"
+                   target="_blank"
+                   aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/jaka-dacar/"
+                   target="_blank"
+                   aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://discordapp.com/user/576005192731066368"
+                   target="_blank"
+                   aria-label="Discord">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+
+            </div>
+
+
+            <section class="projects">
+
+                <h2>My projects and goals for 2026:</h2>
+
+                <ul>
+
+                    <li>
+                        Python — lasinfo
+                        ✅
+                        [GitHub repository - verison 1.0]
+                    </li>
+                    <li>
+                        Simple website in HTML and CSS ✅
+                    </li>
+                    <li>
+                        Upgrade PDAL knowledge 
+                    </li>
+                    <li>
+                        Read some research papers on LiDAR and deep learning
+                        (on the train, bus, in waiting lines...) [10]
+                    </li>
+                    <li>
+                        Archaeological excavations — 
+                        Emona (Ljubljana) Roman Tombs; 
+                    </li>
+                    <li>
+                        Running — 5 km under 18 min
+                        [at the moment: 20:19; 4.5.2026] 
+                    </li>
+                    <li>
+                        Upgrade QGIS and tools 
+                    </li>
+
+                </ul>
+
+            </section>
+        </main>
+
+    <footer>
+    <div class="skills">
+
+        <div class="skill">
+            <div class="skill-name">
+                <span>Python [57 %]</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress python"></div>
+            </div>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-name">
+                <span>PDAL [60 %]</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress pdal"></div>
+            </div>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-name">
+                <span>LiDAR [70 %]</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress lidar"></div>
+            </div>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-name">
+                <span>QGIS [65 %]</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-progress qgis"></div>
+            </div>
+        </div>
+
     </div>
-   <br>
-   <br>
-   <br>
-   <div>
-    <h2 style="margin-top: 20px; margin-left: 10px; margin-bottom: 10px;">My projects and goals for 2026:</h2>
-    <ul style="color: white; font-size: 14px; text-align: left; line-height: 2; padding-left: 20px; font-family: 'Courier New';">
-        <li>Python — .laz file info like LasTools -las64info ⌛️ [https://github.com/PingoPP/lasinfo.git OR click on github logo]</li>
-        <li>Learning SQL ❌ [maybe next year]</li>
-        <li>3D data science with Python and geospatial by python ❌</li>
-        <li>Simple website in HTML and CSS ✅</li>
-        <li>Upgrade PDAL knowledge ⌛️</li>
-        <li>Some basic linear algebra ⌛️ [hasn't begun yet]</li>
-        <li>Thesis theory for LiDAR (read "Remote Sensing" by Krištof Oštir and another sources) ⌛️</li>
-        <li>Read some researches papers on LiDAR and deep learning (on the train, bus, in waiting lines...) [9]</li>
-        <li>Archaeological excavations — MONEEY!!! Emona (Ljubljana) Roman Tombs</li>
-        <li>Running — 5 km under 18 min [at the moment: 20:19; 4.5.2026] ⌛️</li>
-        <li>Upgrade QGIS and tools ⌛️</li>
-    </ul>
-</div>
-    <div>
-        <footer style= "position: fixed; bottom: 0; right: 0; left: 0; text-align: center; padding: 1rem;">
-            <p1>© 2026 Jaka Dacar <br>
-                Version 1.0.2 <br>
-                Built with HTML & CSS</p1>
-        </footer>
-    </div>
+    <span>
+        <div class="footer-info">
+        ©2026 Jaka Dacar
+        <br>
+        Version 1.1.2
+        <br>
+        Built with HTML & CSS
+        </div>
+    </span>
+</footer>
+
 </body>
-
-
 </html>

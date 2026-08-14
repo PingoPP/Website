@@ -24,9 +24,10 @@
         .container {
             min-height: 100vh;
             width: 100%;
-            overflow: hidden;
+            overflow: visible; 
             position: relative;
             background-color: rgb(18, 18, 121);
+            padding-bottom: 320px; 
         }
 
         .container > .background {
@@ -138,6 +139,7 @@
             display: flex; 
             justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
         li {
@@ -184,9 +186,11 @@
             font-size: 14px;
             text-align: left;
             line-height: 2;
-            width: 900px;
+            width: 100%;
+            max-width: 900px; 
             margin: 0 auto;
             padding-left: 20px;
+            box-sizing: border-box;
         }
 
         footer {
@@ -219,6 +223,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 600px;
+            max-width: 90%; 
             z-index: 3;
         }
 
@@ -277,8 +282,84 @@
             box-sizing: border-box;
         }
 
-            </style>
-        </head>
+        @media (max-width: 768px) {
+
+            .container {
+                padding-bottom: 0; 
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 18px;
+                text-align: center;
+                padding: 0 10px;
+            }
+
+            .content {
+                padding: 20px 16px;
+            }
+
+            .icons a {
+                font-size: 38px;
+            }
+
+            .icons {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .projects ul {
+                width: 100%;
+                padding-left: 18px;
+                padding-right: 4px;
+            }
+            
+            .skills {
+                position: static;
+                transform: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 40px auto 0 auto;
+            }
+
+            .skill-name {
+                font-size: 15px;
+            }
+
+            footer {
+                position: static;
+                margin-top: 30px;
+                padding-bottom: 20px;
+            }
+
+            footer a {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
 
 
     <body>

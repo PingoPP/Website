@@ -31,7 +31,7 @@
             height: 100vh;
             min-height: 100vh;
             overflow: hidden;
-            background-color: rgb(18, 18, 121);
+            background-color: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
         }
@@ -51,13 +51,13 @@
         .background:nth-child(1) {
             height: 100%;
             width: 100%;
-            background-color: rgb(13, 3, 53);
+            background-color: rgb(255, 255, 255);
         }
 
         .background:nth-child(2) {
             height: 80%;
             width: 70%;
-            background-color: rgb(8, 8, 72);
+            background-color: rgb(210, 210, 210);
             right: -20%;
             top: 20%;
         }
@@ -65,7 +65,7 @@
         .background:nth-child(3) {
             height: 50%;
             width: 70%;
-            background-color: rgb(15, 15, 54);
+            background-color: rgb(235, 235, 235);
             left: -10%;
             top: -10%;
             animation-delay: 2s;
@@ -74,7 +74,7 @@
         .background:nth-child(4) {
             height: 80%;
             width: 70%;
-            background-color: rgb(0, 0, 73);
+            background-color: rgb(225, 225, 225);
             right: -15%;
             top: -20%;
             animation-delay: 3s;
@@ -83,7 +83,7 @@
         .background:nth-child(5) {
             height: 70%;
             width: 65%;
-            background-color: rgb(0, 4, 37);
+            background-color: rgb(245, 242, 242);
             right: 0%;
             top: -50%;
             animation-delay: 1s;
@@ -93,7 +93,7 @@
             position: absolute;
             content: "";
             inset: 0;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(50px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1;
         }
@@ -112,29 +112,29 @@
 
         h1 {
             font-size: 50px;
-            color: rgb(255, 208, 0);
+            color: rgb(0, 0, 0);
             text-shadow:
-                0 0 10px rgb(113, 103, 6),
-                0 0 20px rgb(147, 134, 17);
+                0 0 10px rgb(180, 180, 180),
+                0 0 20px rgb(220, 220, 220);
             margin: 0 0 20px;
             text-align: center;
         }
 
         h2 {
             font-size: 35px;
-            color: rgb(255, 230, 0);
+            color: rgb(0, 0, 0);
             margin: 25px 0 15px;
             text-align: center;
         }
 
         h3 {
-            color: white;
+            color: black;
             font-size: 20px;
             display: none;
         }
 
         p {
-            color: white;
+            color: black;
             font-size: 25px;
             margin: 3px 0;
             text-align: center;
@@ -149,7 +149,7 @@
         }
 
         .icons a {
-            color: white;
+            color: black;
             font-size: 50px;
             transition:
                 color 0.5s,
@@ -158,8 +158,8 @@
         }
 
         .icons a:hover {
-            color: rgb(0, 0, 0);
-            text-shadow: 0 0 20px rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
             transform: scale(1.1);
         }
 
@@ -175,7 +175,7 @@
         }
 
         .projects ul {
-            color: white;
+            color: black;
             font-size: 14px;
             line-height: 1.6;
             width: 100%;
@@ -215,7 +215,7 @@
         .skill-name {
             display: flex;
             justify-content: space-between;
-            color: white;
+            color: black;
             font-size: 16px;
             margin-bottom: 5px;
         }
@@ -223,7 +223,7 @@
         .skill-bar {
             width: 100%;
             height: 10px;
-            background-color: rgba(255, 254, 254, 0.139);
+            background-color: rgba(0, 0, 0, 0.10);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -231,7 +231,7 @@
         .skill-progress {
             height: 100%;
             border-radius: 10px;
-            background-color: rgb(255, 208, 0);
+            background-color: rgb(0, 0, 0);
         }
 
         .python {
@@ -251,7 +251,7 @@
         }
 
         .footer-info {
-            color: white;
+            color: black;
             font-size: 12px;
             text-align: center;
             line-height: 1.5;
@@ -468,6 +468,10 @@
                 </li>
 
                 <li>
+                    Academic research about visualization by LiDAR 
+                </li>
+
+                <li>
                     Simple website in HTML and CSS ✅
                 </li>
 
@@ -477,7 +481,7 @@
 
                 <li>
                     Read research papers on LiDAR and deep learning
-                    (on the train, bus, in waiting lines...) [10]
+                    (on the train, bus, in waiting lines...) [12]
                 </li>
 
                 <li>
@@ -568,3 +572,4 @@
 
 </body>
 </html>
+

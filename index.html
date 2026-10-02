@@ -14,27 +14,37 @@
         * {
             box-sizing: border-box;
         }
-
-        html,
         body {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
-            overflow: hidden;
+            min-height: 100%;
             font-family: "Courier New", monospace;
         }
 
         .container {
             position: relative;
             width: 100%;
-            height: 100vh;
             min-height: 100vh;
-            overflow: hidden;
+            min-height: 100dvh; 
+            overflow: hidden;   
             background-color: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
         }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            flex: 1;            
+            padding: 35px 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+   
 
         .background {
             position: absolute;
@@ -48,42 +58,57 @@
             }
         }
 
+        .background {
+            position: absolute;
+            border-radius: 50%;
+            animation: gradient 10s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes gradient {
+            50% {
+                transform: scale(1.3) translate(100px);
+            }
+        }
+
         .background:nth-child(1) {
             height: 100%;
             width: 100%;
-            background-color: rgb(255, 255, 255);
+            border-radius: 0;
+            background: linear-gradient(160deg, #5a2d0c 0%, #8a4a14 50%, #a63d10 100%);
+            animation: none;
         }
 
         .background:nth-child(2) {
             height: 80%;
             width: 70%;
-            background-color: rgb(210, 210, 210);
+            background: radial-gradient(circle, #c4621a 0%, rgba(196, 98, 26, 0) 70%);
             right: -20%;
             top: 20%;
         }
 
         .background:nth-child(3) {
-            height: 50%;
+            height: 60%;
             width: 70%;
-            background-color: rgb(235, 235, 235);
+            background: radial-gradient(circle, #a63d10 0%, rgba(166, 61, 16, 0) 70%);
             left: -10%;
             top: -10%;
-            animation-delay: 2s;
+            animation-delay: 1s;
         }
 
         .background:nth-child(4) {
             height: 80%;
             width: 70%;
-            background-color: rgb(225, 225, 225);
+            background: radial-gradient(circle, #8a4a14 0%, rgba(138, 74, 20, 0) 70%);
             right: -15%;
             top: -20%;
-            animation-delay: 3s;
+            animation-delay: 1s;
         }
 
         .background:nth-child(5) {
             height: 70%;
             width: 65%;
-            background-color: rgb(245, 242, 242);
+            background: radial-gradient(circle, #d98324 0%, rgba(217, 131, 36, 0) 70%);
             right: 0%;
             top: -50%;
             animation-delay: 1s;
@@ -93,7 +118,7 @@
             position: absolute;
             content: "";
             inset: 0;
-            backdrop-filter: blur(50px);
+            backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1;
         }
@@ -112,29 +137,29 @@
 
         h1 {
             font-size: 50px;
-            color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
             text-shadow:
-                0 0 10px rgb(180, 180, 180),
-                0 0 20px rgb(220, 220, 220);
+                0 0 10px rgb(15, 15, 64),
+                0 0 20px rgb(15, 15, 64);
             margin: 0 0 20px;
             text-align: center;
         }
 
         h2 {
             font-size: 35px;
-            color: rgb(0, 0, 0);
+            color: rgb(255, 254, 254);
             margin: 25px 0 15px;
             text-align: center;
         }
 
         h3 {
-            color: black;
+            color: white;
             font-size: 20px;
             display: none;
         }
 
         p {
-            color: black;
+            color: white;
             font-size: 25px;
             margin: 3px 0;
             text-align: center;
@@ -149,7 +174,7 @@
         }
 
         .icons a {
-            color: black;
+            color: white;
             font-size: 50px;
             transition:
                 color 0.5s,
@@ -158,8 +183,8 @@
         }
 
         .icons a:hover {
-            color: rgb(255, 255, 255);
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            color: rgb(0, 0, 0);
+            text-shadow: 0 0 20px rgba(15, 15, 64, 0.8);
             transform: scale(1.1);
         }
 
@@ -175,7 +200,7 @@
         }
 
         .projects ul {
-            color: black;
+            color: white;
             font-size: 14px;
             line-height: 1.6;
             width: 100%;
@@ -189,17 +214,13 @@
         }
 
         footer {
-            position: absolute;
-            left: 0;
-            bottom: 0;
+            position: relative;
             width: 100%;
-            height: 190px;
             z-index: 3;
             display: flex;
+            padding: 20px 0 15px;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
-            padding-bottom: 15px;
         }
 
         .skills {
@@ -215,7 +236,7 @@
         .skill-name {
             display: flex;
             justify-content: space-between;
-            color: black;
+            color: white;
             font-size: 16px;
             margin-bottom: 5px;
         }
@@ -223,7 +244,7 @@
         .skill-bar {
             width: 100%;
             height: 10px;
-            background-color: rgba(0, 0, 0, 0.10);
+            background-color: rgba(254, 174, 0, 0.155);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -231,7 +252,7 @@
         .skill-progress {
             height: 100%;
             border-radius: 10px;
-            background-color: rgb(0, 0, 0);
+            background-color: rgb(249, 206, 12);
         }
 
         .python {
@@ -251,7 +272,7 @@
         }
 
         .footer-info {
-            color: black;
+            color: white;
             font-size: 12px;
             text-align: center;
             line-height: 1.5;
@@ -319,8 +340,12 @@
                 margin: 4px 0;
             }
 
+            .projects h2 {
+                margin: 10px 0 35px;
+            }
+
             footer {
-                height: 165px;
+                height: 150px;
             }
 
             .skills {
@@ -402,6 +427,11 @@
             }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            .background {
+                animation: none;
+            }
+        }
     </style>
 </head>
 
@@ -457,45 +487,37 @@
 
         <section class="projects">
 
-            <h2>My projects and goals for summer 2026 (July-September):</h2>
-
+            <h2>My projects and goals for autumn 2026 (October-December):</h2>
+            
             <ul>
 
                 <li>
-                    Python — lasinfo
-                    ✅
-                    [GitHub repository - version 2.0]
+                    Improve Rasterio + work with Sentinel-2 data 
                 </li>
 
                 <li>
-                    Academic research about visualization by LiDAR ✅
+                    Define the bachelor's thesis topic with my mentory (focusin on LiDAR)
                 </li>
 
                 <li>
-                    Simple website in HTML and CSS ✅
+                    Read and master the basic of 3D Data Science with Python [currently: Chapter 6]
                 </li>
 
                 <li>
-                    Upgrade PDAL knowledge ✅
+                    Learn to analyze LAZ point clouds using histograms and other data analysis methods + CloudCompare
                 </li>
 
                 <li>
                     Read research papers on LiDAR and deep learning
-                    (on the train, bus, in waiting lines...) [14]
+                    (on the train, bus, in waiting lines...) [15]
                 </li>
 
                 <li>
-                    Archaeological excavations —
-                    Emona (Ljubljana Roman Tombs) ✅
+                    Learn RVT Python visualization 
                 </li>
 
                 <li>
-                    Running — 5 km under 18 min
-                    [at the moment: 20:19; 4.5.2026]
-                </li>
-
-                <li>
-                    Upgrade QGIS and tools ✅
+                    Stay active for atleast 5 hours per week or achieve 10.000 steps per day
                 </li>
 
             </ul>
@@ -572,4 +594,3 @@
 
 </body>
 </html>
-

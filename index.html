@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaka Dacar - archaeology student working on LiDAR data processing and visualisation techniques.">
 
     <title>Jaka Dacar</title>
 
@@ -10,10 +11,20 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-
         * {
             box-sizing: border-box;
         }
+
+        html {
+            scrollbar-width: none;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -26,37 +37,14 @@
             position: relative;
             width: 100%;
             min-height: 100vh;
-            min-height: 100dvh; 
-            overflow: hidden;   
+            min-height: 100dvh;
+            overflow: hidden;
             background-color: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
         }
 
-        .content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            flex: 1;            
-            padding: 35px 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-   
-
-        .background {
-            position: absolute;
-            border-radius: 3rem;
-            animation: gradient 4s infinite;
-        }
-
-        @keyframes gradient {
-            50% {
-                transform: scale(1.3) translate(100px);
-            }
-        }
+        /* ---------- Ozadje ---------- */
 
         .background {
             position: absolute;
@@ -75,14 +63,14 @@
             height: 100%;
             width: 100%;
             border-radius: 0;
-            background: linear-gradient(160deg, #5a2d0c 0%, #8a4a14 50%, #a63d10 100%);
+            background: linear-gradient(160deg, #212120 0%, #1e1d1c 50%, #272727 100%);
             animation: none;
         }
 
         .background:nth-child(2) {
             height: 80%;
             width: 70%;
-            background: radial-gradient(circle, #c4621a 0%, rgba(196, 98, 26, 0) 70%);
+            background: radial-gradient(circle, #000000 0%, rgba(196, 98, 26, 0) 70%);
             right: -20%;
             top: 20%;
         }
@@ -90,7 +78,7 @@
         .background:nth-child(3) {
             height: 60%;
             width: 70%;
-            background: radial-gradient(circle, #a63d10 0%, rgba(166, 61, 16, 0) 70%);
+            background: radial-gradient(circle, #0e0d0c 0%, rgba(166, 61, 16, 0) 70%);
             left: -10%;
             top: -10%;
             animation-delay: 1s;
@@ -99,7 +87,7 @@
         .background:nth-child(4) {
             height: 80%;
             width: 70%;
-            background: radial-gradient(circle, #8a4a14 0%, rgba(138, 74, 20, 0) 70%);
+            background: radial-gradient(circle, #000000 0%, rgba(138, 74, 20, 0) 70%);
             right: -15%;
             top: -20%;
             animation-delay: 1s;
@@ -108,7 +96,7 @@
         .background:nth-child(5) {
             height: 70%;
             width: 65%;
-            background: radial-gradient(circle, #d98324 0%, rgba(217, 131, 36, 0) 70%);
+            background: radial-gradient(circle, #000000 0%, rgba(217, 131, 36, 0) 70%);
             right: 0%;
             top: -50%;
             animation-delay: 1s;
@@ -119,17 +107,18 @@
             content: "";
             inset: 0;
             backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(30px);
             z-index: 1;
         }
+
+        /* ---------- Vsebina ---------- */
 
         .content {
             position: relative;
             z-index: 2;
             width: 100%;
-            height: calc(100vh - 190px);
+            flex: 1;
             padding: 35px 40px 20px;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -139,8 +128,8 @@
             font-size: 50px;
             color: rgb(255, 255, 255);
             text-shadow:
-                0 0 10px rgb(15, 15, 64),
-                0 0 20px rgb(15, 15, 64);
+                0 0 10px rgb(169, 126, 9),
+                0 0 20px rgb(239, 209, 11);
             margin: 0 0 20px;
             text-align: center;
         }
@@ -150,12 +139,6 @@
             color: rgb(255, 254, 254);
             margin: 25px 0 15px;
             text-align: center;
-        }
-
-        h3 {
-            color: white;
-            font-size: 20px;
-            display: none;
         }
 
         p {
@@ -183,8 +166,8 @@
         }
 
         .icons a:hover {
-            color: rgb(0, 0, 0);
-            text-shadow: 0 0 20px rgba(15, 15, 64, 0.8);
+            color: rgb(239, 209, 11);
+            text-shadow: 0 0 20px rgba(239, 209, 11, 0.8);
             transform: scale(1.1);
         }
 
@@ -192,7 +175,6 @@
             width: 100%;
             max-width: 950px;
             margin-top: 25px;
-            overflow: hidden;
         }
 
         .projects h2 {
@@ -200,18 +182,25 @@
         }
 
         .projects ul {
-            color: white;
-            font-size: 14px;
-            line-height: 1.6;
-            width: 100%;
+            list-style: none;
             margin: 0 auto;
-            padding-left: 25px;
+            padding: 0;
+            width: 100%;
         }
 
         .projects li {
-            margin: 6px 0;
-            text-align: left;
+            color: white;
+            font-size: 25px;
+            margin: 3px 0;
+            text-align: center;
         }
+
+        .projects .note {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        /* ---------- Noga ---------- */
 
         footer {
             position: relative;
@@ -255,21 +244,10 @@
             background-color: rgb(249, 206, 12);
         }
 
-        .python {
-            width: 404;
-        }
-
-        .pdal {
-            width: 404;
-        }
-
-        .lidar {
-            width: 404;
-        }
-
-        .qgis {
-            width: 404;
-        }
+        .python { width: 57%; }
+        .pdal   { width: 60%; }
+        .lidar  { width: 70%; }
+        .qgis   { width: 65%; }
 
         .footer-info {
             color: white;
@@ -278,29 +256,10 @@
             line-height: 1.5;
         }
 
-        ::-webkit-scrollbar {
-            display: none;
-            width: 0;
-            height: 0;
-        }
-
-        html {
-            scrollbar-width: none;
-        }
+        /* ---------- Mobilno ---------- */
 
         @media (max-width: 768px) {
-
-            html,
-            body {
-                overflow: hidden;
-            }
-
-            .container {
-                height: 100vh;
-            }
-
             .content {
-                height: calc(100vh - 165px);
                 padding: 25px 20px 10px;
             }
 
@@ -311,10 +270,6 @@
 
             h2 {
                 font-size: 24px;
-            }
-
-            p {
-                font-size: 18px;
             }
 
             .icons {
@@ -330,22 +285,13 @@
                 margin-top: 15px;
             }
 
-            .projects ul {
-                font-size: 13px;
-                line-height: 1.5;
-                padding-left: 20px;
-            }
-
             .projects li {
-                margin: 4px 0;
+                font-size: 18px;
             }
 
-            .projects h2 {
-                margin: 10px 0 35px;
-            }
-
-            footer {
-                height: 150px;
+            .projects .note {
+                font-size: 15px;
+                margin-top: 20px;
             }
 
             .skills {
@@ -367,7 +313,6 @@
         }
 
         @media (max-width: 420px) {
-
             .content {
                 padding: 20px 12px 5px;
             }
@@ -380,10 +325,6 @@
                 font-size: 19px;
             }
 
-            p {
-                font-size: 15px;
-            }
-
             .icons {
                 gap: 18px;
             }
@@ -392,17 +333,12 @@
                 font-size: 32px;
             }
 
-            .projects ul {
-                font-size: 11px;
-                line-height: 1.35;
-            }
-
             .projects li {
-                margin: 3px 0;
+                font-size: 15px;
             }
 
-            footer {
-                height: 150px;
+            .projects .note {
+                font-size: 13px;
             }
 
             .skills {
@@ -447,47 +383,45 @@
 
     <main class="content">
 
-        <h1>Welcome to crash!</h1>
-        <div class="icons">
+        <h1>Welcome to Jaka Dacar's labs!</h1>
 
-            <a
-                href="https://github.com/PingoPP"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub">
+        <div class="icons">
+            <a href="https://github.com/PingoPP"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub">
                 <i class="fa-brands fa-github"></i>
             </a>
 
-            <a
-                href="https://www.linkedin.com/in/jaka-dacar/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/jaka-dacar/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin"></i>
             </a>
 
-            <a
-                href="https://discordapp.com/user/576005192731066368"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Discord">
+            <a href="https://discordapp.com/user/576005192731066368"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Discord">
                 <i class="fa-brands fa-discord"></i>
             </a>
-
         </div>
 
         <section class="projects">
+            <h2>My research interests</h2>
 
-            <h2>My projects and goals for autumn 2026 (October-December):</h2>
-            
             <ul>
-
-                <li>
-                 ERROR ERROR ERROR...
-                </li>
-
+                <li>- LiDAR data processing and analysis</li>
+                <li>- 3D point cloud processing</li>
+                <li>- Visualisation techniques</li>
             </ul>
 
+            <p class="note">
+                Currently, I am working on a project in which I create LiDAR
+                visualisations in Python and compare them with RVT (Relief
+                Visualization Toolbox) on well-known archaeological sites.
+            </p>
         </section>
 
     </main>
@@ -497,59 +431,31 @@
         <div class="skills">
 
             <div class="skill">
-
-                <div class="skill-name">
-                    <span>Python [57 %]</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress python"></div>
-                </div>
-
+                <div class="skill-name"><span>Python [57 %]</span></div>
+                <div class="skill-bar"><div class="skill-progress python"></div></div>
             </div>
 
             <div class="skill">
-
-                <div class="skill-name">
-                    <span>PDAL [60 %]</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress pdal"></div>
-                </div>
-
+                <div class="skill-name"><span>PDAL [60 %]</span></div>
+                <div class="skill-bar"><div class="skill-progress pdal"></div></div>
             </div>
 
             <div class="skill">
-
-                <div class="skill-name">
-                    <span>LiDAR [70 %]</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress lidar"></div>
-                </div>
-
+                <div class="skill-name"><span>LiDAR [70 %]</span></div>
+                <div class="skill-bar"><div class="skill-progress lidar"></div></div>
             </div>
 
             <div class="skill">
-
-                <div class="skill-name">
-                    <span>QGIS [65 %]</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress qgis"></div>
-                </div>
-
+                <div class="skill-name"><span>QGIS [65 %]</span></div>
+                <div class="skill-bar"><div class="skill-progress qgis"></div></div>
             </div>
 
         </div>
 
         <div class="footer-info">
-            ©2026 Jaka Dacar
+            &copy;2026 Jaka Dacar
             <br>
-            Version 1.1.2
+            Version 1.1.3
             <br>
             Built with HTML &amp; CSS
         </div>
